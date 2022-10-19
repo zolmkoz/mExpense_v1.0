@@ -14,9 +14,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -32,6 +34,10 @@ public class AddTripActivity extends AppCompatActivity implements View.OnClickLi
     private AwesomeValidation awesomeValidation;
     String date_new;
     String channel_id = "RCPL";
+
+    String[] risk = {"No", "Yes"};
+    Spinner sp1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +61,11 @@ public class AddTripActivity extends AppCompatActivity implements View.OnClickLi
         b1.setOnClickListener(this);
         e4.setOnClickListener(this);
         e5.setOnClickListener(this);
+
+        sp1 = findViewById(R.id.spinner1);
+        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, risk);
+        sp1.setAdapter(ad);
+
 
         awesomeValidation.addValidation(this, R.id.editText, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
         awesomeValidation.addValidation(this, R.id.editText2, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.fromerror);

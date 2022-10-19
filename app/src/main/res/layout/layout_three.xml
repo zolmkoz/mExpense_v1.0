@@ -9,15 +9,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0A3D1D"
->
+        android:background="#0A3D1D">
 
-    <ListView
-        android:id="@+id/list1"
-        android:layout_width="401dp"
-        android:layout_height="237dp"
-        />
-
+        <ListView
+            android:id="@+id/list1"
+            android:layout_width="401dp"
+            android:layout_height="237dp" />
 
 
     </ScrollView>

@@ -9,9 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -28,6 +30,9 @@ public class UpdateTripActivity extends AppCompatActivity implements View.OnClic
     int left,budg,left2;
     String date_new;
     private AwesomeValidation awesomeValidation;
+
+    String[] risk2 = {"No", "Yes"};
+    Spinner sp2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +81,10 @@ public class UpdateTripActivity extends AppCompatActivity implements View.OnClic
         e2.setOnFocusChangeListener(this);
         e3.setOnFocusChangeListener(this);
         e6.setOnFocusChangeListener(this);
+
+        sp2 = findViewById(R.id.spinner2);
+        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, risk2);
+        sp2.setAdapter(ad);
 
     }
 
