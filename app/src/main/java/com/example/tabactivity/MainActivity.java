@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
 
     @Override
     public void onProviderDisabled(String provider) {
-        Toast.makeText(this, "Disbaled", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Disable", Toast.LENGTH_SHORT).show();
 
     }
     @Override
@@ -268,7 +268,7 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
                     PackageManager.GET_META_DATA);
 
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "M-Expense - Manage your Trip Expenses here");
-            sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://"+appInfo.publicSourceDir));
+            sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(""+appInfo.publicSourceDir));
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
 
 
