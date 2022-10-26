@@ -9,6 +9,15 @@
     >
 
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="228dp"
+        android:layout_marginBottom="83dp"
+        android:text="Risk" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -193,47 +202,6 @@
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="number" />
-
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="-5dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="5dp"
-        android:text="Add new Trip"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/risk"
-        android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="501dp"
-        android:text="Risk:"
-        android:textSize="18dp" />
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="491dp"
-        android:textAlignment="textEnd" />
 
 
 </RelativeLayout>

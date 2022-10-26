@@ -62,9 +62,6 @@ public class AddTripActivity extends AppCompatActivity implements View.OnClickLi
         e4.setOnClickListener(this);
         e5.setOnClickListener(this);
 
-        sp1 = findViewById(R.id.spinner1);
-        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, risk);
-        sp1.setAdapter(ad);
 
 
         awesomeValidation.addValidation(this, R.id.editText, "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
@@ -133,7 +130,7 @@ public class AddTripActivity extends AppCompatActivity implements View.OnClickLi
                 createChannel();
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channel_id);
 
-                builder.setSmallIcon(R.drawable.ic_near_me_black_24dp);
+                builder.setSmallIcon(R.drawable.ic_baseline_near_me_24);
 
                 builder.setContentTitle("Your Trip Alive!");
                 builder.setContentText("You have Successfully Added trip!! \nEnjoy Your Journey");

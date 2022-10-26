@@ -82,9 +82,6 @@ public class UpdateTripActivity extends AppCompatActivity implements View.OnClic
         e3.setOnFocusChangeListener(this);
         e6.setOnFocusChangeListener(this);
 
-        sp2 = findViewById(R.id.spinner2);
-        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, risk2);
-        sp2.setAdapter(ad);
 
     }
 

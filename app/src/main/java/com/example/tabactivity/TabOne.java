@@ -297,7 +297,7 @@ public class TabOne  extends ListFragment implements PopupMenu.OnMenuItemClickLi
         ListView listView = getListView();
         if(count==0)
         {
-            listView.setBackgroundResource(R.drawable.capture);
+            listView.setBackgroundResource(R.drawable.travelere);
 
 
         }

@@ -4,11 +4,11 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="Mail" />
     <item android:id="@+id/upload"
-        android:icon="@drawable/a123"
+        android:icon="@drawable/greenwich"
         android:title="Upload"
         />
     <item android:id="@+id/share"
-        android:icon="@drawable/a123"
+        android:icon="@drawable/greenwich"
         android:title="Share" />
 </menu>
 

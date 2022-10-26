@@ -36,7 +36,7 @@ public class ViewAllTripActivity extends AppCompatActivity implements PopupMenu.
     String[] edate;
     int[] abudget;
     int[] img;
-    int bimages[] = {R.drawable.scene1,R.drawable.scene2,R.drawable.scene3,R.drawable.scene4,R.drawable.scene5};
+    int bimages[] = {R.drawable.baner1,R.drawable.banner2,R.drawable.banner3,R.drawable.banner4,R.drawable.banner5};
     int[] tripid;
     int delete_id;
     int count;

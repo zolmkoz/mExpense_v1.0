@@ -31,6 +31,7 @@ import android.widget.Toast;
 
 import com.example.tabactivity.ui.main.SectionsPagerAdapter;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
 
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.mipmap.newh);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_home_24);
 
         getSupportActionBar().setElevation(0);
         progressBar = findViewById(R.id.progressBar2);
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setBackgroundColor(Color.parseColor("#ffffff"));
+        fab.setBackgroundColor(Color.parseColor("#F93943"));
         SQLiteDatabase db = openOrCreateDatabase("Trip",MODE_PRIVATE,null);
 
      if(bundle == null) {
@@ -188,8 +189,7 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
 
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
+
 
             return;
         }
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
 
             case R.id.share:
                 shareIt();
-                
+
                 return true;
             case R.id.maps:
                 Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
@@ -268,8 +268,10 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
                     PackageManager.GET_META_DATA);
 
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "M-Expense - Manage your Trip Expenses here");
-            sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(""+appInfo.publicSourceDir));
-            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            sharingIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] { "zolmkoz1@gmail.com" });
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "body of email");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_STREAM, Uri.parse(""+appInfo.publicSourceDir));
+            startActivity(android.content.Intent.createChooser(sharingIntent, "Share via"));
 
 
         }
