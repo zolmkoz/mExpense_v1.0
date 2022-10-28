@@ -5,12 +5,20 @@
     tools:context=".MainActivity">
 
 
+
+
     <item
         android:id="@+id/action_notification1"
         android:icon="@drawable/d2"
         android:title=""
         app:showAsAction="always">
         <menu>
+            <item
+                android:title="Search"
+                android:icon="@drawable/ic_baseline_search_24"
+                android:id="@+id/search"
+                app:showAsAction="ifRoom|collapseActionView"
+                app:actionViewClass="android.widget.SearchView"/>
             <item
                 android:id="@+id/share"
                 android:icon="@drawable/ic_share_black_24dp"

@@ -26,6 +26,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -286,8 +287,24 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        menu.getItem(0).getSubMenu().getItem(3).setVisible(false);
-        menu.getItem(0).getSubMenu().getItem(4).setVisible(true);
+        menu.getItem(0).getSubMenu().getItem(4).setVisible(false);
+        menu.getItem(0).getSubMenu().getItem(5).setVisible(true);
+
+        MenuItem.OnActionExpandListener onActionExpandListener=new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                Toast.makeText(MainActivity.this, "Search is Expanded", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+                Toast.makeText(MainActivity.this, "Search is Collapse", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        };
+
+        menu.findItem(R.id.search).setOnActionExpandListener(onActionExpandListener);
+        SearchView searchView=(SearchView) menu.findItem(R.id.search).getActionView();
         return super.onCreateOptionsMenu(menu);
     }
 
