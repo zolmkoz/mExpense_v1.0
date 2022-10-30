@@ -42,7 +42,7 @@ public class SplashActivity extends AppCompatActivity {
 
                     if(count == 0) {
                         Intent i = new Intent(SplashActivity.this,
-                                CreateTripActivity.class);
+                                LoginActivity.class);
                         startActivity(i);
                     }
                     else
