@@ -40,12 +40,6 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity  implements LocationListener {
 
-    public static final String FACEBOOK_PACKAGE_NAME = "com.facebook.katana";
-    public static final String TWITTER_PACKAGE_NAME = "com.twitter.android";
-    public static final String INSTAGRAM_PACKAGE_NAME = "com.instagram.android";
-    public static final String PINTEREST_PACKAGE_NAME = "com.pinterest";
-    public static final String WHATS_PACKAGE_NAME =  "com.whatsapp";
-
     double lat;
     Date strDate;
     Date strDate2;
