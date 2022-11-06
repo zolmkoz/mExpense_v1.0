@@ -15,6 +15,7 @@
         android:layout_marginBottom="38dp"
         android:layout_toStartOf="@+id/btnLogin"
         android:text="Username"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="131dp" />
 
@@ -27,6 +28,7 @@
         android:layout_marginBottom="134dp"
         android:layout_toStartOf="@+id/edtUserName"
         android:text="Password"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="48dp"
         tools:layout_editor_absoluteY="206dp" />
 
@@ -39,6 +41,7 @@
         android:layout_marginEnd="74dp"
         android:layout_marginBottom="17dp"
         android:ems="10"
+        android:backgroundTint="@color/colorAccent"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="116dp" />
@@ -53,6 +56,7 @@
         android:layout_marginBottom="118dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:backgroundTint="@color/colorAccent"
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="179dp" />
 
@@ -62,8 +66,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="314dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="82dp"
+        android:backgroundTint="@color/colorAccent"
         android:text="Login"
         tools:layout_editor_absoluteX="172dp"
         tools:layout_editor_absoluteY="300dp" />
@@ -79,4 +84,14 @@
         android:text="TextView"
         tools:layout_editor_absoluteX="65dp"
         tools:layout_editor_absoluteY="256dp" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="287dp"
+        android:layout_height="299dp"
+        android:layout_above="@+id/btnLogin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="273dp"
+        app:srcCompat="@drawable/travel" />
 </RelativeLayout>

@@ -61,7 +61,7 @@
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:padding="4dp"
-                android:text="Transfers"
+                android:text="Travels"
                 android:textColor="#0D1C90"
                 android:textSize="18dp" />
 

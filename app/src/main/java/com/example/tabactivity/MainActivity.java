@@ -149,63 +149,39 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
         } catch (ParseException e) {
             Toast.makeText(this, ""+e, Toast.LENGTH_SHORT).show();
         }
-
-
-
-
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
                     if(strDate2.compareTo(strDate)<=0) {
-
                         Intent i = new Intent(MainActivity.this, AddExpenseActivity.class);
                         i.putExtra("id", trip_id);
                         startActivity(i);
                     }
-
                     else
                     {
                         Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Your Trip has Ended!! You can't add Expense Now! .", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null);
                         View sbView = snackbar.getView();
                         sbView.setBackgroundColor(Color.parseColor("#eeeeee"));
-
                         snackbar.show();
                     }
-
-
-
                 }
             });
-
-
-
-
-
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-
             return;
         }
         lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-
-
-
-
-
     }
 
     @Override
     public void onLocationChanged(Location location) {
          lat = location.getLatitude();
          log = location.getLongitude();
-
     }
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-
     }
 
     @Override
@@ -216,20 +192,16 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
     @Override
     public void onProviderDisabled(String provider) {
         Toast.makeText(this, "Disable", Toast.LENGTH_SHORT).show();
-
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case android.R.id.home:
                 Intent i = new Intent(MainActivity.this,ViewAllTripActivity.class);
                 startActivity(i);
                 return true;
-
             case R.id.share:
                 shareIt();
-
                 return true;
             case R.id.maps:
                 Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
@@ -243,7 +215,6 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
                 Intent intent1 = new Intent(Intent.ACTION_VIEW);
                 intent1.setData(Uri.parse(url));
                 startActivity(intent1);
-
             case R.id.exit:
                 finishAffinity();
             default:
@@ -256,26 +227,19 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
         ApplicationInfo appInfo;
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("*/*");
-
         try {
-
             appInfo = pm.getApplicationInfo(getPackageName(),
                     PackageManager.GET_META_DATA);
-
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "M-Expense - Manage your Trip Expenses here");
             sharingIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] { "zolmkoz1@gmail.com" });
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "body of email");
             sharingIntent.putExtra(android.content.Intent.EXTRA_STREAM, Uri.parse(""+appInfo.publicSourceDir));
             startActivity(android.content.Intent.createChooser(sharingIntent, "Share via"));
-
-
         }
         catch (Exception e)
         {
             Toast.makeText(this, "Error: "+e, Toast.LENGTH_LONG).show();
         }
-
-
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -288,6 +252,7 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
                 Toast.makeText(MainActivity.this, "Search is Expanded", Toast.LENGTH_SHORT).show();
+
                 return true;
             }
             @Override
@@ -301,7 +266,4 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
         SearchView searchView=(SearchView) menu.findItem(R.id.search).getActionView();
         return super.onCreateOptionsMenu(menu);
     }
-
-
-
 }

@@ -1,5 +1,6 @@
 package com.example.tabactivity;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,12 +39,15 @@ public class ViewAllTripActivity extends AppCompatActivity implements PopupMenu.
     String[] edate;
     int[] abudget;
     int[] img;
-    int bimages[] = {R.drawable.baner1,R.drawable.banner2,R.drawable.banner3,R.drawable.banner4,R.drawable.banner5};
+    int[] bimages = {R.drawable.baner1,R.drawable.banner2,R.drawable.banner3,R.drawable.banner4,R.drawable.banner5};
     int[] tripid;
     int delete_id;
     int count;
     ListView lv;
     Intent intent,intent3;
+
+    private SearchView searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -296,6 +302,16 @@ public class ViewAllTripActivity extends AppCompatActivity implements PopupMenu.
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.home_trip_search, menu);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        return true;
+    }
 }
 
 

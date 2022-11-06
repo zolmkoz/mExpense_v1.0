@@ -30,7 +30,7 @@ public class TabThree extends Fragment implements AdapterView.OnItemSelectedList
     Spinner sp;
     int count=0;
     String[] dates ;
-    int price[];
+    int[] price;
 
     ViewFlipper vf;
     String category;
