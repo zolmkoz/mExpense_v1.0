@@ -25,19 +25,21 @@ public class SplashActivity extends AppCompatActivity {
                 } finally {
 
                     SQLiteDatabase db = openOrCreateDatabase("Trip",MODE_PRIVATE,null);
-                    String sql = "create table if not exists tripDetails (trip_id integer primary key AutoIncrement, trip_name varchar not null, place_from varchar not null, place_to varchar not null,start_date varchar not null, end_date varchar not null,budget integer not null, balance integer not null)";
+                    String sql = "create table if not exists tripDetails (trip_id integer primary key AutoIncrement, " +
+                            "trip_name varchar not null, place_from varchar not null, place_to varchar not null," +
+                            "start_date varchar not null, end_date varchar not null,budget integer not null, balance integer not null)";
                     db.execSQL(sql);
 
-                    String sql2 = "create table if not exists expenseDetails(expense_id integer primary key AutoIncrement, notes varchar ,category varchar not null, amount_spend integer not null, date varchar not null, trip_id integer, FOREIGN KEY (trip_id) REFERENCES tripDetails(trip_id))";
+                    String sql2 = "create table if not exists expenseDetails(expense_id integer " +
+                            "primary key AutoIncrement, notes varchar ,category varchar not null, " +
+                            "amount_spend integer not null, date varchar not null, trip_id integer, " +
+                            "FOREIGN KEY (trip_id) REFERENCES tripDetails(trip_id))";
                      db.execSQL(sql2);
-
 
                     String countQuery = "SELECT  * FROM tripDetails";
 
                     Cursor cursor = db.rawQuery(countQuery, null);
                     int count = cursor.getCount();
-
-
                     cursor.close();
 
                     if(count == 0) {

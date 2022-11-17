@@ -31,8 +31,6 @@ public class UpdateTripActivity extends AppCompatActivity implements View.OnClic
     String date_new;
     private AwesomeValidation awesomeValidation;
 
-    String[] risk2 = {"No", "Yes"};
-    Spinner sp2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

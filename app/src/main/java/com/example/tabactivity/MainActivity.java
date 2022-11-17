@@ -209,9 +209,7 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
                 startActivity(intent);
                 return true;
             case R.id.about:
-                String number = "zolmkoz.official";
-//                String url = "https://api.whatsapp.com/send?phone="+number;
-                String url = "https://www.facebook.com/"+number;
+                String url = "https://zolmkoz.github.io/FAQ-Question/";
                 Intent intent1 = new Intent(Intent.ACTION_VIEW);
                 intent1.setData(Uri.parse(url));
                 startActivity(intent1);

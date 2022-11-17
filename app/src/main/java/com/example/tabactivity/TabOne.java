@@ -231,9 +231,9 @@ public class TabOne  extends ListFragment implements PopupMenu.OnMenuItemClickLi
             case R.id.delete: {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setIcon(android.R.drawable.ic_delete);
-                builder.setTitle("Delete");
-                builder.setMessage("Are You Sure?");
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                builder.setTitle("Delete Successfully");
+                builder.setMessage("Data has been deleted, do you want to continue?");
+                builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SQLiteDatabase db = getActivity().openOrCreateDatabase("Trip", android.content.Context.MODE_PRIVATE, null);
@@ -272,7 +272,7 @@ public class TabOne  extends ListFragment implements PopupMenu.OnMenuItemClickLi
 
                     }
                 });
-                builder.setNeutralButton("No", new DialogInterface.OnClickListener() {
+                builder.setNeutralButton("Undo", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 

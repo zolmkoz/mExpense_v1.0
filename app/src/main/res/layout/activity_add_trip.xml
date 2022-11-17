@@ -9,16 +9,6 @@
     >
 
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="228dp"
-        android:layout_marginBottom="83dp"
-        android:text="Risk" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="166dp"
@@ -202,6 +192,18 @@
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="number" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="146dp"
+        android:text="•	Requires risk assessment " />
 
 
 </RelativeLayout>
