@@ -1,5 +1,5 @@
 
-# Project Title
+# Project M-Expense
 
 M-Expense application specializes in helping employees record business trip expenses. Project work is still at the academic level, created by the students.
 
