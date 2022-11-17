@@ -45,7 +45,7 @@
                 android:id="@+id/exit"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"
                 android:orderInCategory="100"
-                android:title="Exit" />
+                android:title="Logout" />
 
         </menu>
     </item>

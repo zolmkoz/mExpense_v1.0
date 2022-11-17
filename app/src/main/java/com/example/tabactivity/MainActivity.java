@@ -214,24 +214,38 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
                 intent1.setData(Uri.parse(url));
                 startActivity(intent1);
             case R.id.exit:
-                finishAffinity();
+                Intent login = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(login);
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
     private void shareIt() {
-        PackageManager pm = getPackageManager();
-        ApplicationInfo appInfo;
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("*/*");
         try {
-            appInfo = pm.getApplicationInfo(getPackageName(),
-                    PackageManager.GET_META_DATA);
-            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "M-Expense - Manage your Trip Expenses here");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "M-Expense - Trip expenses report");
             sharingIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] { "zolmkoz1@gmail.com" });
-            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "body of email");
-            sharingIntent.putExtra(android.content.Intent.EXTRA_STREAM, Uri.parse(""+appInfo.publicSourceDir));
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "{\n" +
+                    "  \"expense_id\": 1,\n" +
+                    "  \"notes\": \"food\",\n" +
+                    "  \"category\": \"Food\"\n" +
+                    "  \"amount_spend\": 35,\n" +
+                    "  \"date\": \"18/11/2022\"\n" +
+                    "\n" +
+                    "  \"expense_id\": 2,\n" +
+                    "  \"notes\": \"Hotel\",\n" +
+                    "  \"category\": \"Hotels\"\n" +
+                    "  \"amount_spend\": 163,\n" +
+                    "  \"date\": \"18/11/2022\"\n" +
+                    "\n" +
+                    "  \"expense_id\": 3,\n" +
+                    "  \"notes\": \"Ticket bus\",\n" +
+                    "  \"category\": \"Travels\"\n" +
+                    "  \"amount_spend\": 70,\n" +
+                    "  \"date\": \"18/11/2022\"\n" +
+                    "}\n " );
             startActivity(android.content.Intent.createChooser(sharingIntent, "Share via"));
         }
         catch (Exception e)
