@@ -7,7 +7,7 @@
         android:id="@+id/view"
         android:icon="@drawable/ic_all_inclusive_black_24dp"
         android:orderInCategory="100"
-        android:title="View"
+        android:title="View Expense"
         android:visible="true" />
     <item
         android:id="@+id/edit"
