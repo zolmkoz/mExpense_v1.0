@@ -6,9 +6,20 @@ M-Expense application specializes in helping employees record business trip expe
 
 ## Support
 
-The application supports Android version 5.0 and above java version 8 and above and needs to build gradle before launching..
 
+- The application supports Android v5.0 above
+- Java ver 8
+- JDK v11.0
+- Build gradle before launching
+- In my project, I run on an Emulator Google Pixel 2, Android v11 (API 30)
 
+## Set-up project
+Guide for running the application:
+1. You proceed to decompress the source code file.zip
+2. Open the project in Android Studio
+3. Go to file - Sync Project with Gradle files
+4. Click Run app 
+5. Entering the account to login with username: zolmkoz and password: 183461
 
 
 ## Features
@@ -28,7 +39,7 @@ The application supports Android version 5.0 and above java version 8 and above 
 - [@zolmkoz](https://github.com/zolmkoz)
 
 
-## Demo
+## Demo video
 
-Insert gif or link to demo
+- https://youtu.be/2OONHViPne8
 
